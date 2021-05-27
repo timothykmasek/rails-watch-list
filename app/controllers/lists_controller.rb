@@ -4,6 +4,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @list = List.find(params[:id])
   end
 
   def new
@@ -24,7 +25,7 @@ private
     @list = List.find(params[:id])
   end
 
-  # def list_params
-  #     params.require(:list).permit(:name, :banner_url)
-  # end
+  def list_params
+      params.require(:list).permit(:name)
+  end
 end
